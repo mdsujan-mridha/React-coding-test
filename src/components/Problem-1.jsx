@@ -6,12 +6,14 @@ const Problem1 = () => {
     const [name, setName] = useState('');
     const [status, setStatus] = useState('All');
 
+    // set value 
     const handleSubmit = (e) => {
         e.preventDefault();
         const newTask = { name, status };
         setTasks([...tasks, newTask]);
     };
 
+    // filter all task 
     const filterTasks = (status) => {
         if (status === 'All') {
             return tasks.sort((a, b) => {
@@ -22,9 +24,6 @@ const Problem1 = () => {
         }
         return tasks.filter((task) => task.status === status);
     };
-
-
-
 
     return (
 
